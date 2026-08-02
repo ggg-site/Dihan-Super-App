@@ -25,8 +25,9 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.dihan.DSA
         PRODUCT_NAME: DSA
         SWIFT_VERSION: "5.0"
-        TARGETED_DEVICE_FAMILY: "1"
-        INFOPLIST_FILE: DSA/Info.plist
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_STYLE: Automatic
 
     info:
       path: DSA/Info.plist

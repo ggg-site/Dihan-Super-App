@@ -20,8 +20,15 @@ jobs:
       - name: Build iOS App
         run: |
           xcodebuild \
-          -project DSA.xcodeproj \
-          -scheme DSA \
-          -sdk iphoneos \
-          -configuration Release \
-          build
+            -project DSA.xcodeproj \
+            -scheme DSA \
+            -sdk iphoneos \
+            -configuration Release \
+            -derivedDataPath build \
+            build
+
+      - name: Upload .app
+        uses: actions/upload-artifact@v4
+        with:
+          name: DSA.app
+          path: build/Build/Products/Release-iphoneos/*.app

@@ -1,0 +1,27 @@
+name: Dihan Super App
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Download project
+        uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Create Xcode project
+        run: xcodegen generate
+
+      - name: DSA
+        run: |
+          xcodebuild \
+          -project DSA.xcodeproj \
+          -scheme DSA \
+          -sdk iphoneos \
+          -configuration Release \
+          build
